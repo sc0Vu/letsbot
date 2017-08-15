@@ -1,14 +1,7 @@
 #! /bin/bash
-# Author Peter Lai <alk03073135@gmail.com>
 # It's auto renew for certonly --standalone
 RENEW=false
 RENEWDAYS=7
-
-# create backup directory
-# if [ ! -d "certbackup" ]; then
-#   echo "Create certbackup directory";
-#   mkdir "certbackup";
-# fi
 
 for dir in /etc/letsencrypt/live/*/; do
   for file in "$dir*cert.pem"; do
