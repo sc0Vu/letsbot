@@ -21,7 +21,7 @@ done
 
 if $RENEW; then
   echo "start renew certs";
-  nginx -s stop;
+  pgrep nginx | xargs kill;
   /usr/share/certbot-auto --debug --no-self-upgrade renew
   nginx;
   echo "success to renew certs";
